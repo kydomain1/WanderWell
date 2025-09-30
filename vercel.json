@@ -3,12 +3,8 @@
   "public": true,
   "buildCommand": "echo 'No build process needed for static site'",
   "outputDirectory": ".",
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/$1"
-    }
-  ],
+  "cleanUrls": true,
+  "trailingSlash": false,
   "headers": [
     {
       "source": "/(.*)",
