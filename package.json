@@ -6,8 +6,8 @@
   "scripts": {
     "start": "npx http-server . -p 3000 -c-1",
     "dev": "npx live-server --port=3000 --host=localhost",
-    "build": "echo 'No build process needed for static site'",
-    "deploy": "echo 'Ready for deployment'"
+    "build": "echo 'Static site ready for deployment'",
+    "deploy": "vercel --prod"
   },
   "keywords": [
     "vintage",
@@ -31,9 +31,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/wanderwell-blog.git"
+    "url": "https://github.com/kydomain1/WanderWell.git"
   },
-  "homepage": "https://yourusername.github.io/wanderwell-blog",
+  "homepage": "https://wanderwell.vercel.app",
   "engines": {
     "node": ">=14.0.0"
   }
