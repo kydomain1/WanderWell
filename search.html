@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search - WanderWell</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-brand">
+                    <img src="images/logo.png" alt="WanderWell Logo" class="logo">
+                    <h1 class="brand-name">WanderWell</h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="dropdown">
+                        <a href="categories.html" class="nav-link">Categories <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="categories.html?category=fashion">Fashion & Accessories</a></li>
+                            <li><a href="categories.html?category=health">Health & Beauty</a></li>
+                            <li><a href="categories.html?category=home-garden">Home & Garden</a></li>
+                            <li><a href="categories.html?category=travel">Travel & Accommodation</a></li>
+                            <li><a href="categories.html?category=finance">Finance & Insurance</a></li>
+                            <li><a href="categories.html?category=food">Food & Beverages</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="search.html" class="nav-link active">Search</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="search-box">
+                    <input type="text" id="quickSearchInput" placeholder="Quick search...">
+                    <button id="quickSearchBtn"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Search WanderWell</h1>
+            <p class="page-subtitle">Find articles, products, and inspiration</p>
+        </div>
+    </section>
+
+    <!-- Search Content -->
+    <section class="search-content">
+        <div class="container">
+            <!-- Advanced Search Form -->
+            <div class="search-form-section">
+                <div class="search-form-container">
+                    <h2>Advanced Search</h2>
+                    <form class="advanced-search-form" id="advancedSearchForm">
+                        <div class="search-row">
+                            <div class="search-field">
+                                <label for="searchKeywords">Keywords</label>
+                                <input type="text" id="searchKeywords" name="keywords" placeholder="Enter keywords...">
+                            </div>
+                            <div class="search-field">
+                                <label for="searchCategory">Category</label>
+                                <select id="searchCategory" name="category">
+                                    <option value="">All Categories</option>
+                                    <option value="fashion">Fashion & Accessories</option>
+                                    <option value="health">Health & Beauty</option>
+                                    <option value="home-garden">Home & Garden</option>
+                                    <option value="travel">Travel & Accommodation</option>
+                                    <option value="finance">Finance & Insurance</option>
+                                    <option value="food">Food & Beverages</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="search-row">
+                            <div class="search-field">
+                                <label for="searchDate">Date Range</label>
+                                <select id="searchDate" name="dateRange">
+                                    <option value="">Any Time</option>
+                                    <option value="last-month">Last Month</option>
+                                    <option value="last-3-months">Last 3 Months</option>
+                                    <option value="last-6-months">Last 6 Months</option>
+                                    <option value="this-year">This Year</option>
+                                </select>
+                            </div>
+                            <div class="search-field">
+                                <label for="searchType">Content Type</label>
+                                <select id="searchType" name="contentType">
+                                    <option value="">All Content</option>
+                                    <option value="articles">Articles</option>
+                                    <option value="products">Product Reviews</option>
+                                    <option value="guides">Guides & Tips</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="search-actions">
+                            <button type="submit" class="search-submit-btn">
+                                <i class="fas fa-search"></i>
+                                Search
+                            </button>
+                            <button type="button" class="search-clear-btn" id="clearSearch">
+                                <i class="fas fa-times"></i>
+                                Clear
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Popular Searches -->
+            <div class="popular-searches">
+                <h3>Popular Searches</h3>
+                <div class="popular-tags">
+                    <button class="tag-btn" data-search="vintage fashion">Vintage Fashion</button>
+                    <button class="tag-btn" data-search="natural beauty">Natural Beauty</button>
+                    <button class="tag-btn" data-search="garden design">Garden Design</button>
+                    <button class="tag-btn" data-search="boutique hotels">Boutique Hotels</button>
+                    <button class="tag-btn" data-search="investment tips">Investment Tips</button>
+                    <button class="tag-btn" data-search="sustainable living">Sustainable Living</button>
+                    <button class="tag-btn" data-search="vintage decor">Vintage Decor</button>
+                    <button class="tag-btn" data-search="skincare routine">Skincare Routine</button>
+                </div>
+            </div>
+
+            <!-- Search Results -->
+            <div class="search-results" id="searchResults">
+                <div class="results-header" id="resultsHeader" style="display: none;">
+                    <div class="results-info">
+                        <h3 id="resultsTitle">Search Results</h3>
+                        <p id="resultsCount">0 results found</p>
+                    </div>
+                    <div class="results-sort">
+                        <label for="sortBy">Sort by:</label>
+                        <select id="sortBy" name="sortBy">
+                            <option value="relevance">Relevance</option>
+                            <option value="date-desc">Newest First</option>
+                            <option value="date-asc">Oldest First</option>
+                            <option value="title">Title (A-Z)</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="results-grid" id="resultsGrid">
+                    <!-- Search results will be populated here -->
+                </div>
+                
+                <div class="no-results" id="noResults" style="display: none;">
+                    <div class="no-results-content">
+                        <i class="fas fa-search no-results-icon"></i>
+                        <h3>No Results Found</h3>
+                        <p>We couldn't find any content matching your search criteria.</p>
+                        <div class="search-suggestions">
+                            <h4>Try these suggestions:</h4>
+                            <ul>
+                                <li>Check your spelling</li>
+                                <li>Use more general keywords</li>
+                                <li>Try different category filters</li>
+                                <li>Browse our popular articles below</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="load-more-section" id="loadMoreSection" style="display: none;">
+                    <button class="load-more-btn" id="loadMoreBtn">
+                        <i class="fas fa-plus"></i>
+                        Load More Results
+                    </button>
+                </div>
+            </div>
+
+            <!-- Recent Articles -->
+            <div class="recent-articles" id="recentArticles">
+                <h3>Recent Articles</h3>
+                <div class="recent-grid" id="recentGrid">
+                    <!-- Recent articles will be populated here -->
+                </div>
+            </div>
+
+            <!-- Search Tips -->
+            <div class="search-tips">
+                <h3>Search Tips</h3>
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <div class="tip-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <h4>Use Quotes</h4>
+                        <p>Search for exact phrases by putting them in quotes. Example: "vintage fashion"</p>
+                    </div>
+                    <div class="tip-card">
+                        <div class="tip-icon">
+                            <i class="fas fa-filter"></i>
+                        </div>
+                        <h4>Use Filters</h4>
+                        <p>Narrow your search using category and date filters to find exactly what you need.</p>
+                    </div>
+                    <div class="tip-card">
+                        <div class="tip-icon">
+                            <i class="fas fa-tags"></i>
+                        </div>
+                        <h4>Try Keywords</h4>
+                        <p>Use related keywords and synonyms to expand your search results.</p>
+                    </div>
+                    <div class="tip-card">
+                        <div class="tip-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>Popular Tags</h4>
+                        <p>Click on popular search tags above for quick access to trending topics.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <img src="images/logo.png" alt="WanderWell Logo" class="footer-logo">
+                        <h3>WanderWell</h3>
+                        <p>Your guide to timeless lifestyle inspiration and vintage discoveries.</p>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="index.html#fashion">Fashion & Accessories</a></li>
+                        <li><a href="index.html#health">Health & Beauty</a></li>
+                        <li><a href="index.html#home-garden">Home & Garden</a></li>
+                        <li><a href="index.html#travel">Travel & Accommodation</a></li>
+                        <li><a href="index.html#finance">Finance & Insurance</a></li>
+                        <li><a href="index.html#food">Food & Beverages</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="https://facebook.com/wanderwell" target="_blank" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="https://instagram.com/wanderwell" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="https://twitter.com/wanderwell" target="_blank" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="https://pinterest.com/wanderwell" target="_blank" class="social-link"><i class="fab fa-pinterest"></i></a>
+                        <a href="https://youtube.com/wanderwell" target="_blank" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 WanderWell. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/articles.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

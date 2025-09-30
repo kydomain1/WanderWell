@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article - WanderWell</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-brand">
+                    <img src="images/logo.png" alt="WanderWell Logo" class="logo">
+                    <h1 class="brand-name">WanderWell</h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="dropdown">
+                        <a href="categories.html" class="nav-link">Categories <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="categories.html?category=fashion">Fashion & Accessories</a></li>
+                            <li><a href="categories.html?category=health">Health & Beauty</a></li>
+                            <li><a href="categories.html?category=home-garden">Home & Garden</a></li>
+                            <li><a href="categories.html?category=travel">Travel & Accommodation</a></li>
+                            <li><a href="categories.html?category=finance">Finance & Insurance</a></li>
+                            <li><a href="categories.html?category=food">Food & Beverages</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="search.html" class="nav-link">Search</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Search articles...">
+                    <button id="searchBtn"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Article Hero -->
+    <section class="article-hero" id="articleHero">
+        <div class="hero-background" id="heroBackground"></div>
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="breadcrumb" id="breadcrumb">
+                    <a href="index.html">Home</a>
+                    <span class="separator">/</span>
+                    <span class="category" id="heroCategory">Fashion & Accessories</span>
+                </div>
+                <h1 class="hero-title" id="heroTitle">Loading...</h1>
+                <div class="hero-meta">
+                    <div class="author-info">
+                        <img src="images/team-sarah.jpg" alt="Author" class="author-avatar" id="authorAvatar">
+                        <div class="author-details">
+                            <span class="author-name" id="authorName">Sarah Mitchell</span>
+                            <span class="publish-date" id="publishDate">January 15, 2025</span>
+                        </div>
+                    </div>
+                    <div class="article-stats">
+                        <span class="read-time" id="readTime">8 min read</span>
+                        <span class="view-count" id="viewCount">1,234 views</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Article Content -->
+    <article class="article-content">
+        <div class="container">
+            <div class="article-layout">
+                <!-- Main Content -->
+                <div class="main-content">
+                    <!-- Article Body -->
+                    <div class="article-body" id="articleBody">
+                        <!-- Content will be loaded here -->
+                    </div>
+
+                    <!-- Product Recommendations -->
+                    <section class="product-recommendations" id="productRecommendations" style="display: none;">
+                        <h3>Featured Products</h3>
+                        <div class="products-grid" id="productsGrid">
+                            <!-- Products will be loaded here -->
+                        </div>
+                    </section>
+
+                    <!-- Article Tags -->
+                    <div class="article-tags" id="articleTags">
+                        <!-- Tags will be loaded here -->
+                    </div>
+
+                    <!-- Share Section -->
+                    <div class="share-section">
+                        <h4>Share this article</h4>
+                        <div class="share-buttons">
+                            <button class="share-btn facebook" onclick="shareOnFacebook()">
+                                <i class="fab fa-facebook-f"></i>
+                                <span>Facebook</span>
+                            </button>
+                            <button class="share-btn twitter" onclick="shareOnTwitter()">
+                                <i class="fab fa-twitter"></i>
+                                <span>Twitter</span>
+                            </button>
+                            <button class="share-btn pinterest" onclick="shareOnPinterest()">
+                                <i class="fab fa-pinterest"></i>
+                                <span>Pinterest</span>
+                            </button>
+                            <button class="share-btn copy-link" onclick="copyLink()">
+                                <i class="fas fa-link"></i>
+                                <span>Copy Link</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Comments Section -->
+                    <section class="comments-section">
+                        <h3>Join the Conversation</h3>
+                        <div class="comment-form">
+                            <textarea placeholder="Share your thoughts about this article..." rows="4"></textarea>
+                            <div class="comment-actions">
+                                <button class="submit-comment">
+                                    <i class="fas fa-paper-plane"></i>
+                                    Post Comment
+                                </button>
+                            </div>
+                        </div>
+                        <div class="comments-list">
+                            <div class="comment">
+                                <div class="comment-avatar">
+                                    <i class="fas fa-user-circle"></i>
+                                </div>
+                                <div class="comment-content">
+                                    <div class="comment-header">
+                                        <span class="commenter-name">Emma Thompson</span>
+                                        <span class="comment-date">2 days ago</span>
+                                    </div>
+                                    <p>This article perfectly captures the essence of vintage fashion! I've been following these principles for years and they never go out of style.</p>
+                                </div>
+                            </div>
+                            <div class="comment">
+                                <div class="comment-avatar">
+                                    <i class="fas fa-user-circle"></i>
+                                </div>
+                                <div class="comment-content">
+                                    <div class="comment-header">
+                                        <span class="commenter-name">Michael Chen</span>
+                                        <span class="comment-date">1 week ago</span>
+                                    </div>
+                                    <p>Great recommendations! The Chanel bag suggestion is spot on. Quality over quantity is definitely the way to go.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <!-- Table of Contents -->
+                    <div class="sidebar-widget toc-widget">
+                        <h4>Table of Contents</h4>
+                        <nav class="table-of-contents" id="tableOfContents">
+                            <!-- TOC will be generated here -->
+                        </nav>
+                    </div>
+
+                    <!-- Author Bio -->
+                    <div class="sidebar-widget author-widget">
+                        <div class="author-bio">
+                            <img src="images/team-sarah.jpg" alt="Sarah Mitchell" class="author-image">
+                            <h4>Sarah Mitchell</h4>
+                            <p class="author-title">Fashion & Lifestyle Editor</p>
+                            <p class="author-description">Sarah's passion for vintage fashion and sustainable living sparked the creation of WanderWell. With a background in fashion history and journalism, she brings authentic storytelling to every piece.</p>
+                            <div class="author-social">
+                                <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="social-btn"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="social-btn"><i class="fab fa-pinterest"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Newsletter Signup -->
+                    <div class="sidebar-widget newsletter-widget">
+                        <h4>Stay Updated</h4>
+                        <p>Get our latest articles and exclusive content delivered to your inbox.</p>
+                        <form class="sidebar-newsletter">
+                            <input type="email" placeholder="Your email address" required>
+                            <button type="submit">Subscribe</button>
+                        </form>
+                    </div>
+
+                    <!-- Related Articles -->
+                    <div class="sidebar-widget related-widget">
+                        <h4>You Might Also Like</h4>
+                        <div class="related-articles" id="relatedArticles">
+                            <!-- Related articles will be loaded here -->
+                        </div>
+                    </div>
+
+                    <!-- Popular Tags -->
+                    <div class="sidebar-widget tags-widget">
+                        <h4>Popular Tags</h4>
+                        <div class="popular-tags">
+                            <span class="tag">Vintage Fashion</span>
+                            <span class="tag">Sustainable Living</span>
+                            <span class="tag">Natural Beauty</span>
+                            <span class="tag">Investment Tips</span>
+                            <span class="tag">Garden Design</span>
+                            <span class="tag">Boutique Travel</span>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </article>
+
+    <!-- Reading Progress Bar -->
+    <div class="reading-progress">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <!-- Floating Action Buttons -->
+    <div class="floating-actions">
+        <button class="float-btn back-to-top" id="backToTop" title="Back to Top">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        <button class="float-btn bookmark" id="bookmarkBtn" title="Bookmark">
+            <i class="far fa-bookmark"></i>
+        </button>
+        <button class="float-btn share-float" id="shareFloat" title="Share">
+            <i class="fas fa-share-alt"></i>
+        </button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <img src="images/logo.png" alt="WanderWell Logo" class="footer-logo">
+                        <h3>WanderWell</h3>
+                        <p>Your guide to timeless lifestyle inspiration and vintage discoveries.</p>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="index.html#fashion">Fashion & Accessories</a></li>
+                        <li><a href="index.html#health">Health & Beauty</a></li>
+                        <li><a href="index.html#home-garden">Home & Garden</a></li>
+                        <li><a href="index.html#travel">Travel & Accommodation</a></li>
+                        <li><a href="index.html#finance">Finance & Insurance</a></li>
+                        <li><a href="index.html#food">Food & Beverages</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="https://facebook.com/wanderwell" target="_blank" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="https://instagram.com/wanderwell" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="https://twitter.com/wanderwell" target="_blank" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="https://pinterest.com/wanderwell" target="_blank" class="social-link"><i class="fab fa-pinterest"></i></a>
+                        <a href="https://youtube.com/wanderwell" target="_blank" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 WanderWell. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/articles.js"></script>
+    <script src="js/article-page.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

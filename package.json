@@ -1,0 +1,40 @@
+{
+  "name": "wanderwell-blog",
+  "version": "1.0.0",
+  "description": "A comprehensive vintage-inspired lifestyle blog featuring 6 categories: Fashion & Accessories, Health & Beauty, Home & Garden, Travel & Accommodation, Finance & Insurance, and Food & Beverages.",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server . -p 3000 -c-1",
+    "dev": "npx live-server --port=3000 --host=localhost",
+    "build": "echo 'No build process needed for static site'",
+    "deploy": "echo 'Ready for deployment'"
+  },
+  "keywords": [
+    "vintage",
+    "lifestyle",
+    "blog",
+    "fashion",
+    "beauty",
+    "home",
+    "garden",
+    "travel",
+    "finance",
+    "food",
+    "responsive",
+    "nostalgic"
+  ],
+  "author": "WanderWell Team",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "live-server": "^1.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/wanderwell-blog.git"
+  },
+  "homepage": "https://yourusername.github.io/wanderwell-blog",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
