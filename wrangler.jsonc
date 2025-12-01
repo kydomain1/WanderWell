@@ -1,0 +1,11 @@
+{
+  // Cloudflare Pages 配置 - 用于静态网站部署
+  "name": "wanderwell",
+  "compatibility_date": "2024-01-01",
+  
+  // 静态资源目录配置
+  "assets": {
+    "directory": "."
+  }
+}
+
